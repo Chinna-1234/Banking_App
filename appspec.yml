@@ -4,25 +4,11 @@ files:
   - source: app.jar
     destination: /home/ec2-user/app
   - source: scripts/
-    destination: /home/ec2-user/app
+    destination: /home/ec2-user/app/scripts
 hooks:
-  BeforeInstall:
-    - location: scripts/prereqs.sh
-      timeout: 180
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop.sh
-      timeout: 180
-      runas: ec2-user
-  AfterInstall:
-    - location: scripts/permissions.sh
-      timeout: 60
-      runas: root
+
   ApplicationStart:
     - location: scripts/deploy.sh
       timeout: 180
       runas: ec2-user
-  ValidateService:
-    - location: scripts/healthcheck.sh
-      timeout: 60
-      runas: ec2-user
+
