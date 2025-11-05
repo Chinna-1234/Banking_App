@@ -4,7 +4,7 @@ files:
   - source: app.jar
     destination: /home/ec2-user/app
   - source: scripts/
-    destination: /home/ec2-user/app/scripts
+    destination: /home/ec2-user/app/scripts/
 hooks:
 
   ApplicationStart:
