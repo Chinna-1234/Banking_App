@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: artifact/app.jar
+  - source: app.jar
     destination: /home/ec2-user/app
   - source: scripts/
-    destination: /home/ec2-user/app/scripts
+    destination: /home/ec2-user/app
 hooks:
   BeforeInstall:
     - location: scripts/prereqs.sh
@@ -19,7 +19,7 @@ hooks:
       timeout: 60
       runas: root
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: scripts/deploy.sh
       timeout: 180
       runas: ec2-user
   ValidateService:
