@@ -5,10 +5,9 @@ files:
     destination: /home/ec2-user/app/
   - source: scripts/
     destination: /home/ec2-user/app/scripts/
-hooks:
 
+hooks:
   ApplicationStart:
     - location: scripts/deploy.sh
       timeout: 180
       runas: ec2-user
-
