@@ -75,6 +75,7 @@ public class AccountServiceImpl implements AccountService {
 
     public  List<AccountDto> getAllAccounts() {
         List<Account> accounts = accountRepository.findAll();
+        System.out.println("Accounts from DB: " + accounts);
         return accounts.stream().map((account) -> AccountMapper.mapToAccountDto(account))
                 .collect(Collectors.toList());
 
