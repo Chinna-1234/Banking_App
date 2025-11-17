@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "accounts" , schema = "banking_app")
+@Table(name = "accounts")
 @Entity
 public class Account {
     @Id
